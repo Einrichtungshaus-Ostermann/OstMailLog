@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <!-- configuration -->
+        <service id="ost_mail_log.configuration" class="OstFoundation\Services\ConfigurationService">
+            <factory service="ost_foundation.services.configuration_service" method="getConfig"/>
+            <argument type="string">OstMailLog</argument>
+        </service>
+
+        <!-- commands -->
+        <service class="OstMailLog\Commands\CleanUpCommand">
+            <tag name="console.command"/>
+            <argument type="service" id="ost_mail_log.configuration"/>
+        </service>
+
+        <!-- listeners -->
+        <service id="ost_mail_log.mail_send" class="OstMailLog\Listeners\Enlight\Components\Mail">
+            <argument type="service" id="ost_mail_log.configuration" />
+            <tag name="shopware.event_listener" method="onMailSend" event="Enlight_Components_Mail_Send" />
+        </service>
+
+    </services>
+</container>

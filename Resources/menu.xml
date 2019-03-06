@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/menu.xsd">
+    <entries>
+
+        <!-- main app -->
+        <entry>
+            <name>OstMailLog</name>
+            <label>E-Mail Versand</label>
+            <controller>OstMailLog</controller>
+            <action>index</action>
+            <class>sprite-metronome</class>
+            <parent identifiedBy="controller">ConfigurationMenu</parent>
+        </entry>
+
+    </entries>
+</menu>
