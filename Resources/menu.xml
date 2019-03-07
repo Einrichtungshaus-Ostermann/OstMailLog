@@ -6,7 +6,7 @@
         <!-- main app -->
         <entry>
             <name>OstMailLog</name>
-            <label>E-Mail Versand</label>
+            <label>E-Mail Archiv</label>
             <controller>OstMailLog</controller>
             <action>index</action>
             <class>sprite-metronome</class>
