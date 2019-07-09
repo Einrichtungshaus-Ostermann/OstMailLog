@@ -11,6 +11,9 @@
  * 1.0.1
  * - changed name of menu item
  *
+ * 1.0.2
+ * - removed notice
+ *
  * @package   OstMailLog
  *
  * @author    Eike Brandt-Warneke <e.brandt-warneke@ostermann.de>

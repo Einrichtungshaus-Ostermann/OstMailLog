@@ -55,7 +55,7 @@ class Mail
         // set it up
         $mail->setDate( new \DateTime() );
         $mail->setSender( (string) $mailComponent->getFrom() );
-        $mail->setRecipient( (string) array_shift( $mailComponent->getTo() ) );
+        $mail->setRecipient( (string) @array_shift( $mailComponent->getTo() ) );
         $mail->setSubject( (string) $mailComponent->getPlainSubject() );
         $mail->setBody( (string) $mailComponent->getPlainBody() );
         $mail->setIsHtml( !( $mailComponent->getBodyHtml() === false ) );
